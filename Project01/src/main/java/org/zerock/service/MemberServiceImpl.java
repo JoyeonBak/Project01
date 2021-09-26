@@ -2,6 +2,10 @@ package org.zerock.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.MemberVO;
 import org.zerock.mapper.MemberMapper;
@@ -14,8 +18,10 @@ import lombok.extern.log4j.Log4j;
 @Service
 @AllArgsConstructor
 public class MemberServiceImpl implements MemberService {
-	private MemberMapper mapper;
 
+	@Autowired
+	private MemberMapper mapper;
+	
 	@Override
 	public void register(MemberVO member) {
 		mapper.insertSelectKey(member);
@@ -44,5 +50,10 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+	@Override
+	public MemberVO login(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

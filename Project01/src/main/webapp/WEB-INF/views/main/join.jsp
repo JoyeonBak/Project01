@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 생성 페이지(회원가입)</title>
+<link rel="stylesheet" href="../resources/css/main.css">
 </head>
 <body>
 <!-- 학생등록  -->
@@ -24,42 +25,41 @@
 신입생의 경우는 임시학번(S(영어 대문자)+'수험번호(9자리)') (ex. S123456789)
 (신입생은 등록금 납입 후 즉시 회원가입이 가능하며,
 계약학과 등록금 납입은 산학협력과 950-2242로 문의하시면 됩니다.)
-
-● 아이디는 6~12자리의 영문자(소문자), 숫자로만 사용 가능하며, 처음 두글자는 반드시 영문자(소문자)이어야 합니다.
-
-● 비밀번호는 영문자(대/소문자), 숫자, 특수문자를 각각 1글자 이상 포함하여 9~16자리로 사용하여야 합니다..
-
 ● 특수문자는 {}[]/?.;:()*`!^-_+@#$\만 사용가능합니다.
 
 ● 아이디와 같은 비밀번호나 주민등록번호, 생일, 학번 전화번호등 개인정보와 관련된 숫자, 연속된 숫자, 동일 반복된 숫자등 다른 사람이 쉽게 알아낼 수 있는 비밀번호는 유출의 위험이 있으니 사용하지 마시기 바랍니다.
-
 ● 비밀번호는 안전성을 위하여 3개월에 한 번씩 변경하여야 합니다. -->
 
-
-<form>
-	<table>
-		<tr>
-			<td>사용자 구분</td>
-            <td>
-            	<input type="radio" name="user">학생(학부/대학원)
-                <input type="radio" name="user">신입생(학부/대학원)
-                <input type="radio" name="user">교직원
-            </td>
-       	</tr>
-        <tr><td>이름</td><td><input type="text" placeholder="홍길동"></td></tr>
-        <tr><td>생년월일</td><td><input type="text" placeholder="19900627"> 예) 2020년 1월 1일 ⇒ 20200101</td></tr>
-        <tr><td>교직원번호/학번</td><td><input type="text" placeholder="200012123"></td></tr>
-        <tr><td>아이디</td><td><input type="text" placeholder="사용자 아이디"></td></tr>
-        <tr><td>비밀번호</td><td><input type="text" placeholder="비밀번호"></td></tr>
-        <tr><td>비밀번호 확인</td><td><input type="text" placeholder="비밀번호 확인"></td></tr>
-        <tr>
-            <td colspan="2">
-            	<input type="submit" value="create">
-                <input type="reset" value="reset">
-				<input type="button" value="close">
-			</td>
-		</tr>
-	</table>
-</form>
+<div id="wrap">
+	<div id="header">
+	</div><!-- #header -->
+	<div id="container">
+		<form role="form" action="register" method="post">
+			사용자 구분
+		    <input type="radio" name="user"><label>학생(학부/대학원)</label>
+		    <input type="radio" name="user"><label>신입생(학부/대학원)</label>
+		    <input type="radio" name="user"><label>교직원</label><br>
+		    
+			<label>이름</label>
+			<input type="text" name="name" placeholder="홍길동"><br>
+		    <label>생년월일</label>
+		    <input type="text" name="birth" placeholder="19900627"> 예) 2020년 1월 1일 ⇒ 20200101<br>
+		   	<label>교직원번호/학번</label>
+		   	<input type="text" name="idNumber" placeholder="200012123"><br>
+		    <label>아이디</label>
+		    <input type="text" name="id" placeholder="사용자 아이디"><br>
+		    6~12자리의 영문자(소문자), 숫자로만 사용 가능하며, 처음 두글자는 반드시 영문자(소문자)<br>
+		    <label>비밀번호</label>
+		    <input type="text" name="password" placeholder="비밀번호"><br>
+		    	영문자(대/소문자), 숫자, 특수문자를 각각 1글자 이상 포함하여 9~16자리<br>
+		    <label>비밀번호 확인</label>
+		    <input type="text" name="passwordChk" placeholder="비밀번호 확인"><br>
+		    
+		    <input type="submit" value="create">
+		    <input type="reset" value="reset">
+			<input type="button" value="close">
+		</form>
+	</div><!-- #container -->
+</div><!-- #wrap -->
 </body>
 </html>

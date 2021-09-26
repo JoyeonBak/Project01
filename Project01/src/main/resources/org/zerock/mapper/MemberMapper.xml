@@ -8,14 +8,19 @@
 	  </select>
 	  
 	  <insert id="insert">
-	  	insert into student (idNumber,password,name, department,enrolmentStatus,degreeClassification,address,phoneNumber,emailAddress) 
-	  	values(#{idNumber},#{password},#{name},#{department},#{enrolmentStatus},#{degreeClassification},#{address},#{phoneNumber},#{emailAddress})
+	  	insert into member (idNumber,id,password,name, department,enrolmentStatus,degreeClassification,address,phoneNumber,emailAddress) 
+	  	values(#{idNumber},#{id},#{password},#{name},#{department},#{enrolmentStatus},#{degreeClassification},#{address},#{phoneNumber},#{emailAddress})
 	  </insert>
-	  <insert id="insertSelectKey">
-	  	<selectKey keyProperty="idNumber" order="BEFORE" resultType="long">
-	  		select max(idNumber)+1 idNumber from notice
-	  	</selectKey>	  	
-	  	insert into student (idNumber, name, department,enrolmentStatus,degreeClassification,address,phoneNumber,emailAddress)
-	  	values(#{idNumber},#{password},#{name},#{department},#{enrolmentStatus},#{degreeClassification},#{address},#{phoneNumber},#{emailAddress})
+	  <insert id="insertSelectKey">	
+	  	insert into member (idNumber,id, password, name, department,enrolmentStatus,degreeClassification,address,phoneNumber,emailAddress)
+	  	values(#{idNumber},#{id},#{password},#{name},#{department},#{enrolmentStatus},#{degreeClassification},#{address},#{phoneNumber},#{emailAddress})
 	  </insert>
+	  
+	  <select id="login" resultType="org.zerock.domain.MemberVO">
+	  	select id, password from member
+	  	where id=#{id} and password=#{password}
+	  </select>
+
+	  
+	  
 </mapper>

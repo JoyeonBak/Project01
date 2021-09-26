@@ -5,21 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>list</title>
-<link rel="stylesheet" href="../resources/css/list_style.css">
+<link rel="stylesheet" href="../resources/css/notice_style.css">
 </head>
 <body>
-<form>
-	<h2>수강신청 과목 조회</h2>
+<form action="write" method="get">
+	<h2>공지사항</h2>
 	<table id="tbl_notice">
 		<tr id="tbl_header"><td>번호</td><td>제목</td><td>작성자</td><td>작성일</td></tr>
 		<c:forEach items="${list}" var="notice">
-		<tr>
+		<tr id="tbl_content">
 			<td><c:out value="${notice.bno}"/></td>
-			<td><c:out value="${notice.title}"/></td>
+			<td><a href="/notice/read?bno=<c:out value='${notice.bno}'/>"><c:out value="${notice.title}"/></a></td>
 			<td><c:out value="${notice.writer}"/></td>
 			<td><c:out value="${notice.regdate}"/></td>
-		</tr>		
+		</tr>
 		</c:forEach>
+		<tr><td colspan="4" class="tbl_btn"><input type="submit" value="글쓰기"></td></tr>
 	</table>
 </form>
 </body>

@@ -12,14 +12,13 @@
 	  	values(#{title},#{content},#{writer})
 	  </insert>
 	  <insert id="insertSelectKey">
-	  	<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+	  <selectKey keyProperty="bno" order="BEFORE" resultType="long">
 	  		select max(bno)+1 bno from notice
-	  	</selectKey>	  	
+	  </selectKey>	 
 	  	insert into notice (title, content, writer) 
 	  	values(#{title},#{content},#{writer})
 	  </insert>
-	  
-	  
+	  	  
 	  <select id="read" resultType="org.zerock.domain.NoticeVO">
 	  	select * from notice where bno = #{bno}
 	  </select>

@@ -8,4 +8,5 @@ public interface MemberMapper {
 	public MemberVO read(Long idNumber);
 	public int delete(Long idNumber);
 	public int update(MemberVO member);
+	public MemberVO login(MemberVO member);
 }

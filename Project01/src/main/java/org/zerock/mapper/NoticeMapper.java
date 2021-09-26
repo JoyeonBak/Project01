@@ -9,7 +9,7 @@ public interface NoticeMapper {
 	public List<NoticeVO> getList();
 	public void insert(NoticeVO notice);
 	public void insertSelectKey(NoticeVO notice);
-	public NoticeVO read(Long bno);
-	public int delete(Long bno);
+	public NoticeVO read(int bno);
+	public int delete(int bno);
 	public int update(NoticeVO notice);
 }

@@ -22,9 +22,9 @@ public class NoticeSeriveImpl implements NoticeService {
 	}
 
 	@Override
-	public NoticeVO get(Long bno) {		
+	public NoticeVO get(int bno) {		
 		return mapper.read(bno);
-	}
+	} 
 
 	@Override
 	public boolean modify(NoticeVO notice) {	
@@ -32,7 +32,7 @@ public class NoticeSeriveImpl implements NoticeService {
 	}
 
 	@Override
-	public boolean remove(Long bno){
+	public boolean remove(int bno){
 		return mapper.delete(bno)==1;
 	}
 
