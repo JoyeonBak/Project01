@@ -19,7 +19,7 @@
 * mybatis
 * apache tomcat
 * javascript
-* JQuery
+* MySQL
 
 ## 구현 화면
 ![로그인](https://user-images.githubusercontent.com/88185512/134845807-a2e75394-9cbc-407f-a3c1-d75fc76c168d.jpg)
